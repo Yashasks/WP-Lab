@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <style>
+      .div1 {
+        border: 5px solid black;
+        background-color: grey;
+        text-align: center;
+        width: 400px;
+        margin-left: 500px;
+        margin-top: 100px;
+      }
+      h2 {
+        background: yellow;
+      }
+      p {
+        font-size: 25px;
+        background: yellow;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="div1" align="center">
+      <h2>SIMPLE CALCULATOR</h2>
+      Number1:<input type="number" name="num1" id="num1" /><br />
+      Number2:<input type="number" name="num2" id="num2" /><br />
+      <p id="result1"></p>
+      ADD:
+      <input type="button" value="+" onclick="perform(this.value);" /><br />
+      SUB:<input type="button" value="-" onclick="perform(this.value);" /><br />
+      MUL:<input type="button" value="*" onclick="perform(this.value);" /><br />
+      DIV:<input type="button" value="/" onclick="perform(this.value);" /><br />
+    </div>
+  </body>
+
+  <script>
+    function perform(op) {
+      var n1 = parseInt(document.getElementById("num1").value);
+      var n2 = parseInt(document.getElementById("num2").value);
+      var result;
+
+      if (op == "+") {
+        var result = n1 + n2;
+        document.getElementById("result1").innerHTML = "SUM is:" + result;
+      } else if (op == "-") {
+        result = n1 - n2;
+        document.getElementById("result1").innerHTML =
+          "Difference is:" + result;
+      } else if (op == "*") {
+        result = n1 * n2;
+        document.getElementById("result1").innerHTML = "Product is:" + result;
+      } else if (op == "/") {
+        result = n1 / n2;
+        document.getElementById("result1").innerHTML = "Quotient is:" + result;
+      }
+    }
+  </script>
+</html>
